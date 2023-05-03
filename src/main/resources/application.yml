@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: lavanda-atomohd-torznab
+  profiles:
+    active: dev
+cloud:
+  aws:
+    stack:
+      auto: false
+    region:
+      static: eu-west-1
+    sns:
+      enabled: true    
+server.port: 0      
