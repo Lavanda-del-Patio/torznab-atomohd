@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>es.lavanda</groupId>
 	<artifactId>torznab-atomohd</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>torznab-atomohd</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -95,6 +95,48 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.3.1</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<from>
+						<image>openjdk:11-slim</image>
+						<platforms>
+							<platform>
+								<architecture>amd64</architecture>
+								<os>linux</os>
+							</platform>
+							<platform>
+								<architecture>arm64</architecture>
+								<os>linux</os>
+							</platform>
+						</platforms>
+					</from>
+					<to>
+						<image>registry-1.docker.io/lavandadelpatio/torznab-atomohd</image>
+						<tags>
+							<tag>${project.version}</tag>
+							<tag>${project.version}-${TRIMMED_SHA}</tag>
+							<tag>latest</tag>
+						</tags>
+					</to>
+					<container>
+						<environment>
+							<TZ>Europe/Madrid</TZ>
+						</environment>
+						<user>1000:1000</user>
+					</container>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
