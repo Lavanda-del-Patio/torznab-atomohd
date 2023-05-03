@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>es.lavanda</groupId>
 	<artifactId>torznab-atomohd</artifactId>
-	<version>0.0.7</version>
+	<version>0.0.8-SNAPSHOT</version>
 	<name>torznab-atomohd</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
