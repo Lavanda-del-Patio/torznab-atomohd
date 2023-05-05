@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>es.lavanda</groupId>
 	<artifactId>torznab-atomohd</artifactId>
-	<version>0.0.7</version>
+	<version>0.0.8-SNAPSHOT</version>
 	<name>torznab-atomohd</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -109,7 +109,7 @@
 				</executions>
 				<configuration>
 					<from>
-						<image>openjdk:11-slim</image>
+						<image>amazoncorretto:17-alpine</image>
 						<platforms>
 							<platform>
 								<architecture>amd64</architecture>
