@@ -73,14 +73,8 @@ public class ExternalPagesServiceImpl implements ExternalPagesService {
                         atomohdObject.setCategory(html);
                         atomoHdObjects.add(atomohdObject);
                     }
-                    if (atomoHdObjects.size() > 2)
-                        break;
                 }
-                if (atomoHdObjects.size() > 2)
-                    break;
             }
-            if (atomoHdObjects.size() > 2)
-                break;
         }
         for (AtomohdObject atomohdObject : atomoHdObjects) {
             callToBT4G(atomohdObject.getFullName(), atomohdObject);
