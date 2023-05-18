@@ -33,7 +33,7 @@ public class ExternalPagesServiceImpl implements ExternalPagesService {
 
     private final String FLARESOLVERR_URL = "http://localhost:8191/v1";
 
-    private final String ATOMOHD_URL = "https://atomohd.cash/";
+    private final String ATOMOHD_URL = "https://atomohd.care/";
 
     private final static String CATEGORY_TV = "tv-sonarr"; //FIXME:
 
