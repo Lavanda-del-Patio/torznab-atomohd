@@ -38,11 +38,15 @@ public class AtomoHDServiceImpl implements AtomoHDService {
 
     @Override
     public void updateInternalData() {
+        log.info("Update Internal Data");
         List<AtomohdObject> newAtomohdObjects = externalPagesService.callToAtomoHD();
+        log.info("Atomohd Objects: {} ", newAtomohdObjects.size());
         List<Atomohd> toSave = checkIfExistsAndMapper(newAtomohdObjects);
+        log.info("Objects Mapped: {} ", toSave.size());
         if (Boolean.FALSE.equals(toSave.isEmpty())) {
             atomohdRepository.saveAll(toSave);
         }
+        log.info( "Updated Internal Data");
     }
 
     private List<Atomohd> checkIfExistsAndMapper(List<AtomohdObject> newAtomohdObjects) {
